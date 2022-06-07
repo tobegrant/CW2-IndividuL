@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 const MongoClient = require('mongodb').MongoClient;
 
 let db;
-MongoClient.connect("mongodb+srv://DarkShadow:123123Merry@cw2.gnjxocm.mongodb.net/test"
+MongoClient.connect("mongodb+srv://tobe:Grant_20018@cluster0.ujpsx.mongodb.net/test"
     , (err, client) => {
         db = client.db('webstore');
         console.log("database connected");
@@ -43,15 +43,6 @@ app.post('/collection/:collectionName', (req, res, next) => {
         if (e) return next(e)
         let response = { "message": "success" }
         res.send(response);
-    })
-})
-
-const ObjectID = require('mongodb').ObjectID;
-
-app.get('/collection/:collectionName/:id', (req, res, next) => {
-    req.collection.findOne({ _id: new ObjectID(req.params.id) }, (e, result) => {
-        if (e) return next(e)
-        res.send(result)
     })
 })
 

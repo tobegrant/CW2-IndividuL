@@ -157,7 +157,7 @@
                 }
             },
             async created() {
-                let course = await fetch("https://cw2-individuals.herokuapp.com/collection/lessons")
+                let course = await fetch("https://cw2individuals.herokuapp.com/collection/lessons")
                 let result = await course.json()
                 this.lessons = result
             },
@@ -165,56 +165,13 @@
                 addToCart(lesson) {
                     this.lessons.find(item => item.id == lesson.id).Numberofspaces -= 1;
                     this.cart.push({ id: (this.cart.length + 1), ...lesson });
-                    // // console.log('adding to cart', lesson.id)
-
-                    // this.cart.push({
-
-                    //     id: lessons.id,
-                    //     subject: lessons.subject,
-                    //     location: lessons.location,
-                    //     price: lessons.price,
-                    //     Numberofspaces: lessons.Numberofspaces,
-                    //     image: lessons.image
-
-                    // })
-
-                    // for (let i = 0; i < this.lessons.length; i++) {
-
-                    //     if (lessons.subject === this.lessons[i].subject) {
-
-                    //         let newSpace = this.lessons[i].Numberofspaces - 1
-                    //         this.lessons[i].Numberofspaces = newSpace
-                    //     }
-                    // }
+                    
                 },
                 removeFromCart(lessons) {
                     if (confirm('You are about to delete this!')) {
                         this.cart = [...this.cart].filter(item => item.cartId != lesson.cartId)
                     }
-                    // for (let i = 0; i < this.cart.length; i++) {
-
-                    //     if (this.cart[i].subject === lessons.subject) {
-
-                    //         this.cart.splice(i, 1);
-
-                    //         lessons.Numberofspaces++;
-
-                    //         if (this.cart.length === 0) {
-
-                    //             this.showProduct = true;
-                    //         }
-                    //         break;
-                    //     }
-                    // }
-
-                    // for (let i = 0; i < this.lessons.length; i++) {
-
-                    //     if (lessons.subject === this.lessons[i].subject) {
-
-                    //         let newSpace = this.lessons[i].Numberofspaces + 1
-                    //         this.lessons[i].Numberofspaces = newSpace
-                    //     }
-                    // }
+                    
                 },
                 showCheckout() {
                     this.showProduct = !this.showProduct;
@@ -227,7 +184,7 @@
                         cartProduct: this.cart,
                     }
 
-                    fetch('https://cw2-individuals.herokuapp.com/collection/order', {
+                    fetch('https://cw2individuals.herokuapp.com/collection/order', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -251,7 +208,7 @@
 
                         for (let j = 0; j < this.lessons.length; j++) {
                             if (this.lessons[j].id == this.cart[i].cartId) {
-                                fetch('https://cw2-individuals.herokuapp.com/collection/lessons/' + this.lessons[j].id, {
+                                fetch('https://cw2individuals.herokuapp.com/collection/lessons/' + this.lessons[j].id, {
 
                                     method: 'PUT',
                                     headers: {
@@ -290,15 +247,6 @@
                 sortedLessons() {
                     let sortedLessons = this.lessons;
                     
-                    // Process search input
-                    // if (this.search != '' && this.search) {
-                    //     sortedLessons = sortedLessons.filter((item) => {
-                    //         return item.subject
-                    //         .toUpperCase()
-                    //         .includes(this.search.toUpperCase())
-                    //     })
-                    // }
-
                     // Sort by alphabetical order
                     sortedLessons = sortedLessons.sort((a, b) => {
                         if (this.sortBy == 'subject') {
