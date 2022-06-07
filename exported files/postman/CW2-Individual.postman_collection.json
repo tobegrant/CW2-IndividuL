@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "ec28ccb8-7332-4e10-85ad-9ab1917a8759",
+		"name": "CW2-Individual",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21315188"
+	},
+	"item": [
+		{
+			"name": "root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cw2-individuals.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"cw2-individuals",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Lesson Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cw2-individuals.herokuapp.com/collection/lessons",
+					"protocol": "https",
+					"host": [
+						"cw2-individuals",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"collection",
+						"lessons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://cw2-individuals.herokuapp.com/collection/lessons",
+					"protocol": "https",
+					"host": [
+						"cw2-individuals",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"collection",
+						"lessons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cw2-individuals.herokuapp.com/collection/order",
+					"protocol": "https",
+					"host": [
+						"cw2-individuals",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"collection",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://cw2-individuals.herokuapp.com/collection/order",
+					"protocol": "https",
+					"host": [
+						"cw2-individuals",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"collection",
+						"order"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
