@@ -43,7 +43,7 @@
                         <div class="row py-4 d-flex justify-content-between">
                             <div class="row col">
                                 <div class="col-md-4">
-                                    <select class="btn-secondary btn col-md-12 form-select" name="sortBy" id="select" v-model="sortBy"> Sort
+                                    <select class="btn-success btn col-md-12 form-select" name="sortBy" id="select" v-model="sortBy"> Sort
                                         <option disabled value="sort">--Sort By--</option>
                                         <option value="subject">Subject</option>
                                         <option value="location">Location</option>
@@ -52,7 +52,7 @@
                                 </div>
                                 
                                 <div class="col-md-2">
-                                    <button v-on:click="ascending = !ascending" class="sort-button btn-secondary btn">
+                                    <button v-on:click="ascending = !ascending" class="sort-button btn-success btn">
                                         <i v-if="ascending" class="fa fa-sort-up">Ascending</i>
                                         <i v-else class="fa fa-sort-down">Descending</i>
                                     </button>
@@ -63,7 +63,7 @@
                                         <input v-on:input="filteredList" class="form-control me-2" type="text" v-model="search" placeholder="Search">
                                     </div>
                                     <div class="col-1">
-                                        <button class="btn btn-secondary"><i class="fa fa-search"></i></button>
+                                        <button class="btn btn-success"><i class="fa fa-search"></i></button>
                                     </div> 
                                 </div>
 
@@ -73,7 +73,7 @@
                     
                     <!-- lessons-->
                     <div class="col-md-3 py-2" v-for="(lessons, index) in sortedLessons" :key="`lesson--${index}`">
-                        <div class=" bg-secondary text-white rounded">
+                        <div class=" bg-success text-white rounded">
                             <img v-bind:src="lessons.image" class="card-img-top" width="200dp" height="250dp">
                             <div class="card-body">
                                 <h2 class="card-title my-1">{{lessons.subject}}</h2>
@@ -81,7 +81,7 @@
                                 <div class="card-text my-1">Price: ${{lessons.price}}</div>
                                 <div class="card-text my-1">Number of Spaces: {{ lessons.Numberofspaces}}</div>
                                 <div class="my-2">
-                                    <button class="btn btn-success" v-on:click="addToCart(lessons)" :disabled="!lessons.Numberofspaces">Add To Cart</button>
+                                    <button class="btn btn-danger" v-on:click="addToCart(lessons)" :disabled="!lessons.Numberofspaces">Add To Cart</button>
                                     <span v-if="lessons.Numberofspaces">{{'Left '+ lessons.Numberofspaces}}</span>
                                     <span v-else>This lesson is fully booked!</span>
                                 </div>
@@ -96,7 +96,7 @@
                     </div>
                     
                     <div class="col-md-2 pt-5" v-for="(item, index) in cart" :key="`cart--${index}`">
-                        <div class="card bg-secondary text-white rounded">
+                        <div class="card bg-success text-white rounded">
                             <img v-bind:src="item.image" class="card-img-top" width="100dp" height="150dp">
                             <div class="card-body">
                                 <h2 class="card-title my-1">{{item.subject}}</h2>
